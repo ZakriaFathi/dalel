@@ -1,3 +1,7 @@
+import 'package:dalel_first_project/core/utils/app_strings.dart';
+import 'package:dalel_first_project/core/widgets/custombtn.dart';
+import 'package:dalel_first_project/features/on_boarding/presentation/views/Widgets/custom_nav_bar.dart';
+import 'package:dalel_first_project/features/on_boarding/presentation/views/Widgets/on_boarding_widget_view_body.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingView extends StatelessWidget {
@@ -5,6 +9,23 @@ class OnBoardingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            children: [
+              const SizedBox(height: 40),
+              const customNavBar(),
+              OnBoargingWidgetBody(),
+              const CustomBtn(
+                text: AppStrings.next,
+              ),
+              const SizedBox(height: 17),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
