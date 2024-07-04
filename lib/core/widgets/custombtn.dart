@@ -1,5 +1,4 @@
 import 'package:dalel_first_project/core/utils/app_colors.dart';
-import 'package:dalel_first_project/core/utils/app_strings.dart';
 import 'package:dalel_first_project/core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
 
