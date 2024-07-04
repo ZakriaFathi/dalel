@@ -4,6 +4,8 @@ import 'package:dalel_first_project/features/on_boarding/presentation/views/Widg
 import 'package:dalel_first_project/features/on_boarding/presentation/views/Widgets/on_boarding_widget_view_body.dart';
 import 'package:flutter/material.dart';
 
+import 'functions/on_boarding.dart';
+
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
 
@@ -28,6 +30,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               const SizedBox(height: 40),
               customNavBar(
                 onTap: () {
+                  onBoardingVisited();
                   customReplacementNavigate(context, "/singUp");
                 },
               ),

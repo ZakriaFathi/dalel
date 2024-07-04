@@ -5,6 +5,8 @@ import 'package:dalel_first_project/core/widgets/custombtn.dart';
 import 'package:dalel_first_project/features/on_boarding/data/models/on_boarding_model.dart';
 import 'package:flutter/material.dart';
 
+import '../functions/on_boarding.dart';
+
 class GetButtons extends StatelessWidget {
   const GetButtons(
       {super.key, required this.currentIndex, required this.controller});
@@ -19,6 +21,7 @@ class GetButtons extends StatelessWidget {
           CustomBtn(
             text: AppStrings.createAccount,
             onPressed: () {
+              onBoardingVisited();
               customReplacementNavigate(context, "/singUp");
             },
           ),
@@ -27,6 +30,7 @@ class GetButtons extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
+              onBoardingVisited();
               customReplacementNavigate(context, "/singIn");
             },
             child: Text(
