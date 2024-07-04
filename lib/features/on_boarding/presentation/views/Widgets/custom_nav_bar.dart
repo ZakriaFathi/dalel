@@ -4,17 +4,20 @@ import 'package:flutter/material.dart';
 
 class customNavBar extends StatelessWidget {
   const customNavBar({
-    super.key,
+    super.key, required this.onTap,
   });
-
+final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.centerRight,
-      child: Text(
-        AppStrings.skip,
-        style: CustomTextStyles.poppins500style18
-            .copyWith(fontWeight: FontWeight.w400),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Text(
+          AppStrings.skip,
+          style: CustomTextStyles.poppins500style18
+              .copyWith(fontWeight: FontWeight.w400),
+        ),
       ),
     );
   }

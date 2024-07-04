@@ -5,17 +5,18 @@ import 'package:dalel_first_project/features/on_boarding/presentation/views/Widg
 import 'package:flutter/material.dart';
 
 class OnBoargingWidgetBody extends StatelessWidget {
-  OnBoargingWidgetBody({super.key});
-
-  final PageController _controller = PageController();
+  const OnBoargingWidgetBody({super.key, required this.controller, this.onPageChanged});
+final PageController controller;
+final Function(int)? onPageChanged;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 500,
       child: PageView.builder(
+        onPageChanged: onPageChanged,
         physics: const BouncingScrollPhysics(),
-        controller: _controller,
+        controller: controller,
         itemCount: onBoardingData.length,
         itemBuilder: (context, index) {
           return Column(
@@ -34,7 +35,7 @@ class OnBoargingWidgetBody extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               CustomSmoothpageIndecator.CustomSmoothpageIndicator(
-                  controller: _controller),
+                  controller: controller),
               const SizedBox(height: 32),
               Text(
                 onBoardingData[index].title,
