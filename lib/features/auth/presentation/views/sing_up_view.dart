@@ -1,11 +1,11 @@
-import 'package:dalel_first_project/core/utils/app_colors.dart';
 import 'package:dalel_first_project/core/utils/app_strings.dart';
-import 'package:dalel_first_project/core/utils/app_text_style.dart';
 import 'package:dalel_first_project/core/widgets/custombtn.dart';
 import 'package:dalel_first_project/features/auth/presentation/widgets/custom_text_field.dart';
-import 'package:dalel_first_project/features/auth/presentation/widgets/terms_and_conidtion_widget.dart';
+import 'package:dalel_first_project/features/auth/presentation/widgets/terms_and_conidition_widget.dart';
 import 'package:dalel_first_project/features/auth/presentation/widgets/welcome_text_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/have_an_account_widget.dart';
 
 class SingUpView extends StatelessWidget {
   const SingUpView({super.key});
@@ -48,7 +48,7 @@ class SingUpView extends StatelessWidget {
               ),
             ),
             const SliverToBoxAdapter(
-              child: TermsAndConidtionWidget(),
+              child: TermsAndConiditionWidget(),
             ),
             const SliverToBoxAdapter(
               child: SizedBox(height: 88),
@@ -60,9 +60,9 @@ class SingUpView extends StatelessWidget {
               ),
             ),
             const SliverToBoxAdapter(
-              child: HAveAnAccountWidget(
+              child: HaveAnAccountWidget(
                 text1: AppStrings.alreadyHaveAnAccount,
-                txet2: AppStrings.signUp,
+                txet2: AppStrings.signIn,
               ),
             ),
           ],
@@ -72,22 +72,4 @@ class SingUpView extends StatelessWidget {
   }
 }
 
-class HAveAnAccountWidget extends StatelessWidget {
-  const HAveAnAccountWidget(
-      {super.key, required this.text1, required this.txet2});
-  final String text1, txet2;
-  @override
-  Widget build(BuildContext context) {
-    return Text.rich(
-      TextSpan(
-        children: [
-          TextSpan(text: text1, style: CustomTextStyles.poppins400style12),
-          TextSpan(
-              text: txet2,
-              style: CustomTextStyles.poppins400style12
-                  .copyWith(color: AppColors.lightGrey)),
-        ],
-      ),
-    );
-  }
-}
+
